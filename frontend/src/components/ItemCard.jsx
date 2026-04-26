@@ -11,7 +11,9 @@ function ItemCard({ item, onDelete }) {
       <h3>{item.name}</h3>
       <p><strong>Category:</strong> {item.category}</p>
       <p><strong>Price:</strong> ${item.price}</p>
-      <p><strong>Discount:</strong> {item.discountPercentage}% </p>
+      <p><strong>Discount:</strong> {item.discountPercentage}% </p> // new field display for discount percentage
+      <p><strong>Serial Number:</strong> {item.serialNumber}</p>
+<p><strong>Quantity:</strong> {item.quantity}</p>
       <p>{item.description}</p>
 
       <div className="card-actions">

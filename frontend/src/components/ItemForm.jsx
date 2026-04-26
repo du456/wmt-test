@@ -7,6 +7,8 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       category: "",
       price: "",
       discountPercentage: "",
+      serialNumber: "", // new field in state
+      quantity: "",
       description: "",
       imageUrl: "",
     }
@@ -22,7 +24,8 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
     onSubmit({
       ...formData,
       price: Number(formData.price),
-      discountPercentage: Number(formData.discountPercentage),  
+      discountPercentage: Number(formData.discountPercentage),  // new filed in submit data
+      quantity: Number(formData.quantity), // new field in submit data  
     });
   };
 
@@ -45,7 +48,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
         required
       />
 
-      <label>Discount Percentage</label>
+      <label>Discount Percentage</label> // new UI field for discount percentage
       <input
         type="number"
         name="discountPercentage"
@@ -54,6 +57,26 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
         required
       /> 
 
+        {/* Serial Number */}
+<label>Serial Number</label>
+<input
+  type="text"
+  name="serialNumber"
+  value={formData.serialNumber}
+  onChange={handleChange}
+  required
+/>
+
+      {/* Quantity */}
+      <label>Quantity</label>
+      <input
+        type="number"
+        name="quantity"
+        value={formData.quantity}
+        onChange={handleChange}
+        min="0"
+      />  
+    
       <label>Description</label>
       <textarea
         name="description"
